@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment2._2
 {
-    internal class Skyda
+    public class Skyda
     {
     }
 }
