@@ -8,5 +8,6 @@ namespace assignment2._2
 {
     public class Skyda
     {
+        public int FalledProtectionLayersNumber { get; set; }
     }
 }
