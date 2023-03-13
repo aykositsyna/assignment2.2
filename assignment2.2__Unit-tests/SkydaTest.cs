@@ -41,6 +41,7 @@ namespace assignment2._2__Unit_tests
 			Assert.IsTrue(res);
 		}
 
+		[TestMethod]
 		public void Has_Method_Attack()
 		{
 			var res = typeof(Skyda).HasMethod("Attack");
