@@ -8,5 +8,12 @@ namespace assignment2._2
 {
     internal interface IReactProtectionFall
     {
+        int LayerReactorNumber { get; }
+        string Message { get; }
+
+        void OnProtectionFall(object, ProtectionFallEventArgs)
+        { }
+        void Subscribe(Skyda)
+        { }
     }
 }
