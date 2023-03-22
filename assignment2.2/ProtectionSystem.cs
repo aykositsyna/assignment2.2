@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment2._2
 {
-    internal class ProtectionSystem
+    public class ProtectionSystem
     {
         public string Title;
         public DateTime Date;

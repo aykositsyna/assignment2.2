@@ -6,25 +6,26 @@ using System.Threading.Tasks;
 
 namespace assignment2._2
 {
-<<<<<<< HEAD
+    public delegate void ProtectionFallHandler(object sender, ProtectionFallEventArgs container);
     public class Skyda
     {
-        public int FalledProtectionLayersNumber { get; set; }
-=======
-    delegate void ProtectionFallHandler(object, ProtectionFallEventArgs );
-    internal class Skyda
-    {
+        public int FalledProtectionLayerNumber;
         public int KnownFalledProtectionLayersNumber;
         public ProtectionSystem ProtectionSystem;
-        public ProtectionFallHandler ProtectionFall;
+        public event ProtectionFallHandler ProtectionFall;
 
         public virtual void NotifyProtectionFall()
-        { }
+        {
+            ProtectionSystem.ProtectionCheck(KnownFalledProtectionLayersNumber);
+            ProtectionFallEventArgs protectionFallEventArgs = new ProtectionFallEventArgs(FalledProtectionLayerNumber, ProtectionSystem);
+            object empty = new Object();
+            ProtectionFall(empty, protectionFallEventArgs);
+        }
 
         public virtual void Attack()
         {
             ProtectionSystem.GetAttack();
         }
->>>>>>> master
+
     }
 }
