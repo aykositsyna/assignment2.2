@@ -8,7 +8,7 @@ namespace assignment2._2
 {
     internal class ProtectionFallEventArgs : EventArgs
     {
-        public int FalledProtectionLayersNumber;
+        
         public ProtectionSystem System;
     }
 }
