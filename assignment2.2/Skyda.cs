@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace assignment2._2
-{ 
-    delegate void ProtectionFallHandler(object, ProtectionFallEventArgs)
+{
+    delegate void ProtectionFallHandler(object, ProtectionFallEventArgs );
     internal class Skyda
     {
         public int KnownFalledProtectionLayersNumber;
@@ -17,6 +17,8 @@ namespace assignment2._2
         { }
 
         public virtual void Attack()
-        { }
+        {
+            ProtectionSystem.GetAttack();
+        }
     }
 }

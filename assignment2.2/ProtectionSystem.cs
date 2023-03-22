@@ -22,7 +22,7 @@ namespace assignment2._2
         { 
             Random random = new Random();
             int rand = random.Next(0, 5);
-            if (rand == 3)
+            if (rand >= 3)
             {
                 ProtectionLayerNumber--;
                 FalledProtectionLayerNumber++;
