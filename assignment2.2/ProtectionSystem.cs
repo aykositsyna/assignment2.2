@@ -12,12 +12,19 @@ namespace assignment2._2
         public DateTime Date;
         public int ProtectionLayerNumber;
         public int FalledProtectionLayerNumber;
+        int SavedLayerNumber;
 
-        public virtual bool ProtectionCheck(int CurrentPtotectionLayerNumber)
+        public virtual bool ProtectionCheck()
         {
-            bool isUnbroken = CurrentPtotectionLayerNumber <= ProtectionLayerNumber;
+            if (SavedLayerNumber < FalledProtectionLayerNumber) 
+            {
+                SavedLayerNumber++;
+                return true;
+            }
+            else { return false; }
+
             Date.AddDays(1);
-            return isUnbroken;
+            
         }
 
         public virtual void GetAttack()
@@ -28,6 +35,7 @@ namespace assignment2._2
             {
                 ProtectionLayerNumber--;
                 FalledProtectionLayerNumber++;
+                
             }
         }
     }

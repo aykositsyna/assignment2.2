@@ -11,9 +11,10 @@ namespace assignment2._2
         int LayerReactorNumber { get; }
         string Message { get; }
 
-        void OnProtectionFall(object sender, ProtectionFallEventArgs container)
-        { }
-        void Subscribe(Skyda skyda)
-        { }
+        void OnProtectionFall(object sender, ProtectionFallEventArgs container);
+        public void Subscribe(Skyda skyda)
+        {
+            skyda.ProtectionFall += OnProtectionFall;
+        }
     }
 }

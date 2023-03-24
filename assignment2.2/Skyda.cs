@@ -16,10 +16,11 @@ namespace assignment2._2
 
         public virtual void NotifyProtectionFall()
         {
-            ProtectionSystem.ProtectionCheck(KnownFalledProtectionLayersNumber);
-            ProtectionFallEventArgs protectionFallEventArgs = new ProtectionFallEventArgs(FalledProtectionLayerNumber, ProtectionSystem);
-            object empty = new Object();
-            ProtectionFall(empty, protectionFallEventArgs);
+            if (ProtectionSystem.ProtectionCheck())
+            {
+                ProtectionFallEventArgs protectionFallEventArgs = new ProtectionFallEventArgs(FalledProtectionLayerNumber, ProtectionSystem);
+                ProtectionFall?.Invoke(this, protectionFallEventArgs);
+            }
         }
 
         public virtual void Attack()
