@@ -8,7 +8,7 @@ namespace assignment2._2
 {
     internal interface IReactProtectionFall
     {
-        int LayerReactorNumber { get; }
+        int LayerReactorNumber { get; set; }
         string Message { get; }
 
         void OnProtectionFall(object sender, ProtectionFallEventArgs container);
