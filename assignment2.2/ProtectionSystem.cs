@@ -17,6 +17,8 @@ namespace assignment2._2
 
         public virtual bool ProtectionCheck()
         {
+            Date = Date.AddDays(1);
+            days++;
             if (SavedLayerNumber < FalledProtectionLayerNumber) 
             {
                 SavedLayerNumber++;
@@ -24,8 +26,6 @@ namespace assignment2._2
             }
             else { return false; }
 
-            Date.AddDays(1);
-            days++;
             
         }
 

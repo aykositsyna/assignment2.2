@@ -18,7 +18,8 @@ namespace assignment2._2
         {
             if (ProtectionSystem.ProtectionCheck())
             {
-                ProtectionFallEventArgs protectionFallEventArgs = new ProtectionFallEventArgs(FalledProtectionLayerNumber, ProtectionSystem);
+                ProtectionFallEventArgs protectionFallEventArgs = 
+                    new ProtectionFallEventArgs(FalledProtectionLayerNumber, ProtectionSystem);
                 ProtectionFall?.Invoke(this, protectionFallEventArgs);
             }
         }

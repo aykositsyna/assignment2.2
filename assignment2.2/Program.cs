@@ -13,6 +13,7 @@ namespace assignment2._2
         {
             Skyda skyda = new Skyda();
             ProtectionSystem protectionSystem = new ProtectionSystem();
+            skyda.ProtectionSystem = protectionSystem;
             protectionSystem.Title = "System";
             protectionSystem.ProtectionLayerNumber = 3;
             protectionSystem.Date = DateTime.Now;
