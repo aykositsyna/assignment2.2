@@ -24,5 +24,9 @@ namespace assignment2._2
                     container.FalledProtectionLayersNumber + "\nDays since start:   " + container.System.days;
             }
         }
+        public void Subscribe(Skyda skyda)
+        {
+            skyda.ProtectionFall += OnProtectionFall;
+        }
     }
 }

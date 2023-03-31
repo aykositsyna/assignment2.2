@@ -11,6 +11,32 @@ namespace assignment2._2
     {
         public static void Main(string[] args)
         {
+            Skyda skyda = new Skyda();
+            ProtectionSystem protectionSystem = new ProtectionSystem();
+            protectionSystem.Title = "System";
+            protectionSystem.ProtectionLayerNumber = 3;
+            protectionSystem.Date = DateTime.Now;
+            EndLayerNotifier end = new EndLayerNotifier();
+            BasicLayerNotifier basic = new BasicLayerNotifier();
+            basic.Subscribe(skyda);
+            end.Subscribe(skyda);
+            
+            for (int i = 0;  i < 50; i++) 
+            {
+                skyda.Attack();
+                skyda.NotifyProtectionFall();
+                if (!string.IsNullOrEmpty(basic.Message))
+                {
+                    Console.WriteLine(basic.Message);
+                    basic.Message = null;
+                }
+                if (!string.IsNullOrEmpty(end.Message))
+                {
+                    Console.WriteLine(end.Message);
+                    break;
+                }
+
+            }
         }
     }
 }
